@@ -110,12 +110,16 @@ DJOSER = {
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+name_db = os.environ.get('DB_NAME')
+user_db = os.environ.get('DB_USER')
+pass_db = os.environ.get('DB_PASSWORD')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'board',
-        'USER': 'postgres',
-        'PASSWORD': 'P@ssw0rd',
+        'NAME': name_db,
+        'USER': user_db,
+        'PASSWORD': pass_db,
         'HOST': os.getenv('DB_HOST')
     }
 }
